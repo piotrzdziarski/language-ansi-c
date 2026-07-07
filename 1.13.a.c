@@ -1,3 +1,4 @@
+// A solution with a horizontal histogram
 #include<stdio.h>
 #define IN 1
 #define OUT 0
