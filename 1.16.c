@@ -11,19 +11,20 @@ main() {
 	max = 0;
 	while ((len = getLine(line, MAXLINE)) > 0)
 		if (len == MAXLINE - 1) {
-			while (getchar() != EOF)
+			char c;
+			while ((c = getchar()) != EOF && c != '\n')
 				len++;
 			if (len > max) {
 				max = len;
 				copy(longest, line);
 			}
-			printf("Długość najdłuższego wiersza: %d\n", max);
 		}
 		else if (len > max) {
 			max = len;
 			copy(longest, line);
 		}
-	
+
+			printf("Długość najdłuższego wiersza: %d\n", max);	
 	printf("Najdłuższy wiersz:\n");
 	if (max > 0)
 		printf("%s", longest);
