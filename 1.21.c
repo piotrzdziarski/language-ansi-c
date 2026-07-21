@@ -21,6 +21,8 @@ main(){
 			putchar(c);
 			++oc;
 			++tp;
+			if (tp == TAB)
+				tp = sc = oc = 0;
 		}
 	}
 }
