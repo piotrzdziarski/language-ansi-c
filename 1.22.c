@@ -43,11 +43,15 @@ main() {
 						putchar(line[j]);
 				putchar('\n');
 				int k = 0;
-				for (int j = li + 1; j < BREAK; ++j, ++k)
-					line[k] = line[j];
+				for (int j = li + 1; j < BREAK; ++j) {
+					if (line[j] != '\t' && line[j] != ' ') {
+						line[k] = line[j];
+						++k;
+					}
+				}
+				i = k;
 				for (; k < BREAK; k++)
 					line[k] = 0;
-				i = BREAK - li;
 				li = 0;
 			} else {
 				for (int j = 0; j < BREAK; j++) {
