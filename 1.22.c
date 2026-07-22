@@ -1,5 +1,5 @@
 #include "stdio.h"
-#define BREAK 10
+#define BREAK 20
 #define TAB 8
 main() {
 	char line[BREAK], c, /*Previous character*/pc = 0;
@@ -18,6 +18,7 @@ main() {
 				/*for (int j = i; j < i + TAB - tp; j++)
 					line[j] = 0;*/
 				i += TAB - tp;
+				if (i >= BREAK) i = BREAK - 1;
 				tp = 0;
 			} else {
 				tp++; if (tp == TAB) tp = 0;
